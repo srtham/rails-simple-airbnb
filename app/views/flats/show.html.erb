@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @flat.name %></h1>
+  <strong>Address: </strong> <%= @flat.address %><br>
+  <strong>Category: </strong> <%= @flat.description %><br>
+  <strong>Price per night: </strong><%= @flat.price_per_night %>
+  <strong>No. of Guest: </strong><%= @flat.number_of_guests %>
+
+  <hr>
+
+  <%= link_to "Back to Home", flats_path %>
+</div>

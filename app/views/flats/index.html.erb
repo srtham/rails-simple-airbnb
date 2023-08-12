@@ -1,0 +1,27 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <span class="navbar-brand m-1 h1">Simple Airbnb</span>
+  <a class="nav-link my-2 my-sm-0" <%= link_to "Add Airbnb", new_flat_path %></a>
+</nav>
+
+<h1>All Our Flats Available (<%= @flats.length %>)</h1>
+
+<div class="mb-10">
+  <div class="d-flex row">
+  <% @flats.each do |flat| %>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to flat.name, flat_path(flat) %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+          <p class="card-text"><%= flat.description %></p>
+          <i class="fa-solid fa-person-dress"> <%= flat.number_of_guests %> </i>
+          <i class="fa-solid fa-euro-sign"> <%= flat.price_per_night %> </i>
+          <div class="card-footer">
+            <small class="text-muted"><%= link_to "More Info", flat_path(flat) %></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
